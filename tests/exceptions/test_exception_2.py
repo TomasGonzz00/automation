@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as ec
 
 class TestExceptions:
     @pytest.mark.exceptions
-    def test_element_not_interactable_exception(self):
+    def test_element_not_interactable_exception(self, driver):
         chrome_driver_path = 'C:\\Users\\admin\\Desktop\\drivers\\chromedriver.exe'
         service = ChromeService(executable_path=chrome_driver_path)
         driver = webdriver.Chrome(service=service)

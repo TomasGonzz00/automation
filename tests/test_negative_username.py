@@ -8,11 +8,8 @@ from selenium.webdriver.common.keys import Keys
 
 class TestNegativePathUsername:
     @pytest.mark.loginN
-    def test_negative_username(self):
-        chrome_driver_path = 'C:\\Users\\admin\\Desktop\\drivers\\chromedriver.exe'  # En Windows | tu ruta aqui
-        service = ChromeService(executable_path=chrome_driver_path)
-        driver = webdriver.Chrome(service=service)
-        time.sleep(5)
+    def test_negative_username(self, driver):
+
         driver.get("https://practicetestautomation.com/practice-test-login/")
 
         user = driver.find_element(By.NAME, 'username')
