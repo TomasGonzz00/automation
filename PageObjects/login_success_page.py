@@ -2,21 +2,23 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 import base_page
 
+
 class LoggedInSuccessfullyPage(base_page.BasePage):
     __actual_url = "https://practicetestautomation.com/logged-in-successfully/"
     __header = (By.TAG_NAME, "h1")
     __log_out_button = (By.LINK_TEXT, 'Log out')
 
     def __init__(self, driver: WebDriver):
-        self._driver = driver
+        super().__init__(driver)
 
     @property
-    def current_url(self) -> str:
-        return self.
+    def expected_url(self) -> str:
+        return self.__actual_url
 
+    @property
     def header(self) -> str:
-        return self._driver.find_element(self.__header).text
+        return super()._get_text(self.__header)
 
     def is_logout_button_displayed(self) -> bool:
-        return self._driver.find_element(self.__log_out_button).is_displayed()
+        return super()._is_displayed(self.__log_out_button)
 

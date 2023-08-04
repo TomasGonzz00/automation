@@ -10,17 +10,22 @@ class LoginPage(base_page.BasePage):
     __username_field = (By.NAME, "username")
     __password_field = (By.ID, 'password')
     __submit_button = (By.XPATH, "//button[@class='btn']")
+    __error_message = (By.ID, "error")
 
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
-        self._driver = driver
 
     def open(self):
         super()._open_url(self.__url)
 
     def execute_login(self, username: str, password: str):
         super()._type(self.__username_field, username)
-        super()._type(self.__username_field, password)
+        super()._type(self.__password_field, password)
         super()._click(self.__submit_button)
+
+    def get_error_message(self):
+        pass
+
+
 
 

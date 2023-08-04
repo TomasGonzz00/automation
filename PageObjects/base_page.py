@@ -5,7 +5,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
 
-
 class BasePage:
 
     def __init__(self, driver: WebDriver):
@@ -38,5 +37,6 @@ class BasePage:
         except NoSuchElementException:
             return False
 
-    def get_text(self, locator: tuple, time: int = 10):
-        pass
+    def _get_text(self, locator: tuple, time: int = 10) -> str:
+        self._wait_until_element_is_visible(locator, time)
+        return self._find(locator).text
