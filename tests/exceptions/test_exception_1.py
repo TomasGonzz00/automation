@@ -7,7 +7,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
 
-
 class TestExceptions:
     @pytest.mark.exceptions
     def test_no_such_element_exception(self, driver):
@@ -16,7 +15,6 @@ class TestExceptions:
         driver = webdriver.Chrome(service=service)
         time.sleep(5)
         driver.get("https://practicetestautomation.com/practice-test-exceptions/")
-
 
         add_button_locator = driver.find_element(By.ID, "add_btn")
         add_button_locator.click()
