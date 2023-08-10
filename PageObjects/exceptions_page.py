@@ -42,14 +42,11 @@ class ExceptionPage(BasePage):
 
     def clear_input(self):
         super()._click(self.__edit_btn_locator)
-        super()._clear(self.__field_input_locator_2)
+        super()._wait_until_element_is_clickable(self.__field_input_locator)
+        super()._clear(self.__field_input_locator)
 
     def text_changed(self):
         return super()._is_displayed(self.__confirmation_locator)
-
-
-
-
 
 
 

@@ -24,6 +24,10 @@ class BasePage:
     def _wait_until_element_is_visible(self, locator: tuple, time: int):
         WebDriverWait(self._driver, time).until(ec.visibility_of_element_located(locator))
 
+    def _wait_until_element_is_clickable(self, locator: tuple, time: int = 10):
+        wait = WebDriverWait(self._driver, time)
+        wait.until(ec.element_to_be_clickable(locator))
+
     def _open_url(self, url: str):
         self._driver.get(url)
 
