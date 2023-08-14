@@ -15,6 +15,7 @@ class ExceptionPage(BasePage):
     __input_text = "Tacos"
     __confirmation_locator = (By.ID, "confirmation")
     __edit_btn_locator = (By.XPATH, "//button[contains(@id,'edit_btn')]")
+    __instructions_locator = (By.ID, "instructions")
 
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
@@ -47,6 +48,12 @@ class ExceptionPage(BasePage):
 
     def text_changed(self):
         return super()._is_displayed(self.__confirmation_locator)
+
+    def instructions_no_displayed(self):
+        return super()._is_displayed(self.__instructions_locator)
+
+    def second_row_displayed(self):
+        return super()._is_displayed(self.__field_input_locator_2)
 
 
 
