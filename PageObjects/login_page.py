@@ -1,11 +1,11 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
-import base_page
+
+from PageObjects.base_page import BasePage
 
 
-class LoginPage(base_page.BasePage):
+class LoginPage(BasePage):
     __url = "https://practicetestautomation.com/practice-test-login/"
     __username_field = (By.NAME, "username")
     __password_field = (By.ID, 'password')

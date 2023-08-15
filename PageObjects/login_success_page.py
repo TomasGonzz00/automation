@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
-import base_page
+from PageObjects.base_page import BasePage
 
 
-class LoggedInSuccessfullyPage(base_page.BasePage):
+class LoggedInSuccessfullyPage(BasePage):
     __actual_url = "https://practicetestautomation.com/logged-in-successfully/"
     __header = (By.TAG_NAME, "h1")
     __log_out_button = (By.LINK_TEXT, 'Log out')
